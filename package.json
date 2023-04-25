@@ -4,7 +4,7 @@
   "description": "This is a customized landing page using the knowledge I acquire from the platzi course about callback, promises and async/await",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d src"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Fer-dev-gt/landing-page-with-async/issues"
   },
-  "homepage": "https://github.com/Fer-dev-gt/landing-page-with-async#readme"
+  "homepage": "https://github.com/Fer-dev-gt/landing-page-with-async#readme",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }
