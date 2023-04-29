@@ -44,6 +44,7 @@ const content = null || document.getElementById('content');                     
   } catch (error) {                                                                 // Capturo cualquier tipo de error
     console.log(error);                                                             // Imprimo la información de cualquier tipo de error que surja
     alert("aaaaaaaahhhhh se cayó la páginaaaaaaa!!!! 🙀🙀🙀")                        // Muestro un "alert" si hay un error cuando intento mostrar los videos 
+    content.innerHTML = "<h2>Error al cargar</h2>"
   }
 
 })();                                                                               // Al colocar "()" al final de la definición de la función esta se ejecuta a si misma, automaticamente llamarlas
@@ -53,7 +54,7 @@ const content = null || document.getElementById('content');                     
 
 
 
-
+// PENDIENTE: AGREGAR API DE CARTAS CON LAS IMAGENES DE LA COMIDA, la otra API la puedo realizar en otro modúlo y colocar otra etiqueta <script> en el HTML
 
 
 
