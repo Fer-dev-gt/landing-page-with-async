@@ -1,5 +1,5 @@
 // La URL de la variable "API" y el Code Snippet la encontré gracias a "RapidAPI"
-const API = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCi8wqezBudeAiTdKOX571ug&part=snippet%2Cid&order=date&maxResults=12';         // Al final de este link de la API en "=12" es la cantidad de elementos que quiero solicitar en este caso pedí 12 elementos
+const API = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCi8wqezBudeAiTdKOX571ug&part=snippet%2Cid&order=date&maxResults=16';         // Al final de este link de la API en "=12" es la cantidad de elementos que quiero solicitar en este caso pedí 12 elementos
 const options = {
 	method: 'GET',
 	headers: {
@@ -30,15 +30,15 @@ const content = null || document.getElementById('content');                     
           <div class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-none">
             <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.description}" class="w-full">                          <!-- Coloco como fuente de la imagen del video la dirreción que esta definida en mi objeto JSON en "videos" "video.snippet.thumbnails.high.url" y hago algo similar en la descripción del video "video.snippet.description"-->
           </div>
-          <div class="mt-4 flex justify-between">
-            <h3 class="text-sm text-gray-50">
-              <span aria-hidden="true" class="absolute inset-0"></span>
+          <div class="mt-4 flex justify-between" style="text-shadow: 1px 1px 4px yellow, 0 0 2em yellow, 0 0 0.4em yellow;" >
+            <h3 class="text-lg font-semibold text-gray-900">
+              <span aria-hidden="true" class="absolute inset-0 "></span>
               ${video.snippet.title}                                                <!-- Coloco el titulo del video -->
             </h3>
           </div>
         </div>
       </a>
-    `).slice(0,12).join('')}                                                        <!-- Puedo hacer tranformaciones al Array que creé, como definir cuantos "slides" de los videos quiero mostrar y para unirlos uso el método ".join('')" y pasarle un valor vació '' -->
+    `).slice(0,16).join('')}                                                        <!-- Puedo hacer tranformaciones al Array que creé, como definir cuantos "slides" de los videos quiero mostrar y para unirlos uso el método ".join('')" y pasarle un valor vació '' -->
     `;
     content.innerHTML = view;                                                       // Dentro del <div> "content" le voy a insertar el HTML que se encuentra en mi Array ubicado en la variable "view" que contiene cada uno de los elementos (titulo, descripcion, thumbnail) de la API
   } catch (error) {                                                                 // Capturo cualquier tipo de error
