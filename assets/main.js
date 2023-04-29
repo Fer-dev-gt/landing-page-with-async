@@ -1,5 +1,5 @@
 // La URL de la variable "API" y el Code Snippet la encontré gracias a "RapidAPI"
-const API = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCi8wqezBudeAiTdKOX571ug&part=snippet%2Cid&order=date&maxResults=12';         // Al final de este link de la API en "=12" es la cantidad de elementos que quiero solicitar en este caso pedí 12 elementos
+const API = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCi8wqezBudeAiTdKOX571ug&part=snippet%2Cid&order=date&maxResults=16';         // Al final de este link de la API en "=12" es la cantidad de elementos que quiero solicitar en este caso pedí 12 elementos
 const options = {
 	method: 'GET',
 	headers: {
@@ -25,25 +25,26 @@ const content = null || document.getElementById('content');                     
     // Voy a crear un "template" que va iterar cada uno de los elementos que esten en la respuesta de "videos" y va a crear una estructura HTML para agregar la información que yo deseo a la página web y mostrar sus elementos
     let view = `                                                                    <!-- El template (estuctura HTML lo guardare´en la variable "view") -->
     ${videos.items.map(video => `                                                   <!-- Accedo a los "items" de la respuesta en "videos" y utilizo el método "map" para que me retorne un nuevo "array" pero con la transformación que le estoy aplicando (En este caso el "template" HTML) a los elementos del array que obtuve, ".map()" me va a retornar un nuevo valor, los guardo en la variable "video" e utilizo de nuevo una Arrow Function-->
-      <a href="https://youtube.com/watch?v=${video.id.videoId}" target="_blank">
+      <a href="https://youtube.com/watch?v=${video.id.videoId}" target="_blank">    <!-- Usando 'target="_blank" le indico al HTML y al enlace que vaya a la página en una nueva pestaña'-->
         <div class="group relative">        
-          <div class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
+          <div class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-lg overflow-hidden group-hover:opacity-80 lg:aspect-none">
             <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.description}" class="w-full">                          <!-- Coloco como fuente de la imagen del video la dirreción que esta definida en mi objeto JSON en "videos" "video.snippet.thumbnails.high.url" y hago algo similar en la descripción del video "video.snippet.description"-->
           </div>
-          <div class="mt-4 flex justify-between">
-            <h3 class="text-sm text-gray-50">
-              <span aria-hidden="true" class="absolute inset-0"></span>
+          <div class="mt-4 flex justify-between" style="text-shadow: 1px 1px 4px yellow, 0 0 2em yellow, 0 0 0.4em yellow;" >
+            <h3 class="text-lg font-semibold text-gray-900">
+              <span aria-hidden="true" class="absolute inset-0 "></span>
               ${video.snippet.title}                                                <!-- Coloco el titulo del video -->
             </h3>
           </div>
         </div>
       </a>
-    `).slice(0,12).join('')}                                                        <!-- Puedo hacer tranformaciones al Array que creé, como definir cuantos "slides" de los videos quiero mostrar y para unirlos uso el método ".join('')" y pasarle un valor vació '' -->
+    `).slice(0,16).join('')}                                                        <!-- Puedo hacer tranformaciones al Array que creé, como definir cuantos "slides" de los videos quiero mostrar y para unirlos uso el método ".join('')" y pasarle un valor vació '' -->
     `;
     content.innerHTML = view;                                                       // Dentro del <div> "content" le voy a insertar el HTML que se encuentra en mi Array ubicado en la variable "view" que contiene cada uno de los elementos (titulo, descripcion, thumbnail) de la API
   } catch (error) {                                                                 // Capturo cualquier tipo de error
     console.log(error);                                                             // Imprimo la información de cualquier tipo de error que surja
     alert("aaaaaaaahhhhh se cayó la páginaaaaaaa!!!! 🙀🙀🙀")                        // Muestro un "alert" si hay un error cuando intento mostrar los videos 
+    content.innerHTML = "<h2>Error al cargar</h2>"
   }
 
 })();                                                                               // Al colocar "()" al final de la definición de la función esta se ejecuta a si misma, automaticamente llamarlas
@@ -53,7 +54,7 @@ const content = null || document.getElementById('content');                     
 
 
 
-
+// PENDIENTE: AGREGAR API DE CARTAS CON LAS IMAGENES DE LA COMIDA, la otra API la puedo realizar en otro modúlo y colocar otra etiqueta <script> en el HTML
 
 
 
