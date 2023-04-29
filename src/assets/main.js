@@ -27,7 +27,7 @@ const content = null || document.getElementById('content');                     
     ${videos.items.map(video => `                                                   <!-- Accedo a los "items" de la respuesta en "videos" y utilizo el método "map" para que me retorne un nuevo "array" pero con la transformación que le estoy aplicando (En este caso el "template" HTML) a los elementos del array que obtuve, ".map()" me va a retornar un nuevo valor, los guardo en la variable "video" e utilizo de nuevo una Arrow Function-->
       <a href="https://youtube.com/watch?v=${video.id.videoId}" target="_blank">
         <div class="group relative">        
-          <div class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
+          <div class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-none">
             <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.description}" class="w-full">                          <!-- Coloco como fuente de la imagen del video la dirreción que esta definida en mi objeto JSON en "videos" "video.snippet.thumbnails.high.url" y hago algo similar en la descripción del video "video.snippet.description"-->
           </div>
           <div class="mt-4 flex justify-between">
