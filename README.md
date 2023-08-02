@@ -6,4 +6,4 @@ Please enjoy and any feedback is super welcome! 👾
 ## You can checkout the results in the following link:
 https://fer-dev-gt.github.io/landing-page-with-async/
 
-<img width="2240" alt="Screenshot 2023-08-01 at 23 53 34" src="https://github.com/Fer-dev-gt/landing-page-with-async/assets/119085740/0abe01fe-cb4b-4764-b65e-d37ec15d7682">
+<img width="1678" alt="Screenshot 2023-08-01 at 23 54 23" src="https://github.com/Fer-dev-gt/landing-page-with-async/assets/119085740/2cbdf505-8815-4295-bfc5-cfcbeced187c">
